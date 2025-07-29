@@ -404,8 +404,9 @@ for i in srcs:
      phasecenter= coords[index]
      rms = thresh[index]
 
-     #For continuum imaging, we are going to clean down to 1 * rms
-     tclean(vis=vis,imagename=prename,gridder='mosaic',deconvolver='hogbom',pbmask=0.2,imsize=imsize,cell=cell,spw='',weighting='briggs',robust=0.5,phasecenter=phasecenter,specmode='mfs',restfreq=restfreq,outframe='LSRK',veltype='radio',restoringbeam='common',mosweight=True,niter=niter,usemask='auto-multithresh',threshold=str(1.0*rms)+'Jy/beam',sidelobethreshold=sidelobethresh,noisethreshold=noisethresh,lownoisethreshold=lownoisethresh,minbeamfrac=minbeamfrac,growiterations=75,negativethreshold=negativethresh,interpolation='linear',cyclefactor=2,interactive=False,pbcor=True,verbose=True)
+     #For continuum imaging, we are going to clean down to 1 * rms, 
+     #using 'natural' weighting in order to recover as much as possible of the extended continuum emission
+     tclean(vis=vis,imagename=prename,gridder='mosaic',deconvolver='hogbom',pbmask=0.2,imsize=imsize,cell=cell,spw='',weighting='natural',robust=0.5,phasecenter=phasecenter,specmode='mfs',restfreq=restfreq,outframe='LSRK',veltype='radio',restoringbeam='common',mosweight=True,niter=niter,usemask='auto-multithresh',threshold=str(1.0*rms)+'Jy/beam',sidelobethreshold=sidelobethresh,noisethreshold=noisethresh,lownoisethreshold=lownoisethresh,minbeamfrac=minbeamfrac,growiterations=75,negativethreshold=negativethresh,interpolation='linear',cyclefactor=2,interactive=False,pbcor=True,verbose=True)
 
      index += 1
 
