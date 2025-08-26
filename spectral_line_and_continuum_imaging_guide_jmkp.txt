@@ -175,7 +175,8 @@ chan= [200,200,370,350,250,450,260,320,280,200,420,500,500,240,200] #chans
 #python3 -m http.server 8080 --bind localhost
 #Then, on your browser enter the following:
 #http://localhost:8080
-#Click 'By Task', and in steps #37 or #38, you will find the theoretical sensitivities for each source and spw
+#Click the 'By Task' tab on top, and in steps #37 or #38 (the one named 'hif_makeimages'), you will find 
+#the theoretical sensitivities for each source and spw
 
 #Here, we will use Option 2 for determining the rms threshold:
 #This are the 'final' (average) theoretical values selected from the 15 sources above
