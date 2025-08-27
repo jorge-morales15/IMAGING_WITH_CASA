@@ -9,20 +9,24 @@ import glob
 #List of source names:
 srcs= ['HOPS-156','HOPS-163','HOPS-30','HOPS-160','HOPS-140','HOPS-139','HOPS-189','HOPS-193','HOPS-29','HOPS-145','HOPS-17','HOPS-18','HOPS-71','HOPS-43','HOPS-133']
 
-#Gather the .ms files for the 12M and 7M datasets:
-#You need to update the paths (below) to where the *targets.contsub.ms files are
-vlist12m= glob.glob('12M_FILES_FOR_SELFCAL/*targets.contsub.ms')
-vlist7m= glob.glob('7M_FILES_FOR_SELFCAL/*targets.contsub.ms')
+#Gather the .ms files for the 12M dataset and split them by source name (THIS STEP IS DONE ONLY ONCE)
+#This assumes you run the following commands from the directory where the 12m, self-calibrated, continuum-subtracted (*targets.contsub.ms) files are located: 
+vlist12m= glob.glob('*targets.contsub.ms')
 
-#Split the self-calibrated, continuum subtracted, .ms files by source name (THIS STEP IS DONE ONLY ONCE): 
 #We take into account that VIS parameter in SPLIT does not take a list as an input):
 #You can check the spw numbers for your data by looking at one of the *targets.contsub.ms files with the LISTOBS command
 #And you need to update the paths for where you want to store the splitted .ms files
-
 for i in srcs:
     for j in vlist12m:
         split(vis=j,outputvis='../12M_SPLIT/'+i+'_'+j+'_12m.ms',spw='25,27,29,31,33,35,37,39,41,43',field=i,datacolumn='data',keepflags=False)
 
+#Gather the .ms files for the 7M dataset and split them by source name (THIS STEP IS DONE ONLY ONCE)
+#This assumes you run the following commands from the directory where the 7m, self-calibrated, continuum-subtracted (*targets.contsub.ms) files are located: 
+vlist7m= glob.glob('*targets.contsub.ms')
+ 
+#We take into account that VIS parameter in SPLIT does not take a list as an input):
+#You can check the spw numbers for your data by looking at one of the *targets.contsub.ms files with the LISTOBS command
+#And you need to update the paths for where you want to store the splitted .ms files
 for i in srcs:
     for j in vlist7m:
         split(vis=j,outputvis='../7M_SPLIT/'+i+'_'+j+'_7m.ms',spw='16,18,20,22,24,26,28,30,32,34',field=i,datacolumn='data',keepflags=False)
