@@ -18,7 +18,7 @@ vlist12m= glob.glob('*targets.contsub.ms')
 #And you need to update the paths for where you want to store the splitted .ms files
 for i in srcs:
     for j in vlist12m:
-        split(vis=j,outputvis='../12M_SPLIT/'+i+'_'+j+'_12m.ms',spw='25,27,29,31,33,35,37,39,41,43',field=i,datacolumn='data',keepflags=False)
+        split(vis=j,outputvis='12M_SPLIT/'+i+'_'+j+'_12m.ms',spw='25,27,29,31,33,35,37,39,41,43',field=i,datacolumn='data',keepflags=False)
 
 #Gather the .ms files for the 7M dataset and split them by source name (THIS STEP IS DONE ONLY ONCE)
 #This assumes you run the following commands from the directory where the 7m, self-calibrated, continuum-subtracted (*targets.contsub.ms) files are located: 
@@ -29,7 +29,7 @@ vlist7m= glob.glob('*targets.contsub.ms')
 #And you need to update the paths for where you want to store the splitted .ms files
 for i in srcs:
     for j in vlist7m:
-        split(vis=j,outputvis='../7M_SPLIT/'+i+'_'+j+'_7m.ms',spw='16,18,20,22,24,26,28,30,32,34',field=i,datacolumn='data',keepflags=False)
+        split(vis=j,outputvis='7M_SPLIT/'+i+'_'+j+'_7m.ms',spw='16,18,20,22,24,26,28,30,32,34',field=i,datacolumn='data',keepflags=False)
 
 #Source coordinates, following the same order as the list with the source names (above):
 #Notice the format of the Dec values...
