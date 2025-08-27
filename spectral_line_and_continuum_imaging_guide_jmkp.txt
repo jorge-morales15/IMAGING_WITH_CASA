@@ -12,7 +12,7 @@ srcs= ['HOPS-156','HOPS-163','HOPS-30','HOPS-160','HOPS-140','HOPS-139','HOPS-18
 #Gather the .ms files for the 12M and 7M datasets:
 #You need to update the paths (below) to where the *targets.contsub.ms files are
 vlist12m= glob.glob('12M_FILES_FOR_SELFCAL/*targets.contsub.ms')
-vlist7m= glob.glob('7M_FILES_FOR_SELFCAL/*targets.constub.ms')
+vlist7m= glob.glob('7M_FILES_FOR_SELFCAL/*targets.contsub.ms')
 
 #Split the self-calibrated, continuum subtracted, .ms files by source name (THIS STEP IS DONE ONLY ONCE): 
 #We take into account that VIS parameter in SPLIT does not take a list as an input):
