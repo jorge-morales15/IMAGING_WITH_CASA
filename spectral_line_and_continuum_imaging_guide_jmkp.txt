@@ -93,7 +93,7 @@ for i in srcs:
 
 #In the next step you have two options: 
 
-#OPTION #1: You can look with CARTA at the 12M and 7M dirty images to find an appropriate START and NCHAN value for both datasets; this is not the only way (and maybe not the most efficient way) to do it, it's just how I initially did it; or
+#OPTION #1: You can look with CARTA at the 12M and 7M dirty images to find an appropriate START and NCHAN value for both datasets; this is not the only way (and maybe not the most efficient way) to do it; or
 
 #OPTION #2: Using the following CASA commands one can iteretaively find the image parameters using IMHEAD in GET mode and use them to determine an appropriate START and NCHANvalue for both datasets, which is done below:
 
