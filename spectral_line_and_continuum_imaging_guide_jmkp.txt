@@ -353,7 +353,7 @@ coords= ['ICRS 05:38:03.4080 -06.58.15.959','ICRS 05:37:17.2799 -06.36.18.360','
 #restfreqs= ['216.583500GHz','218.458500GHz','216.945600GHz','218.222192GHz','219.560358GHz','220.398684GHz','230.027060GHz','230.538000GHz','231.321828GHz','232.980000GHz']
 
 restfreq='224.78175GHz' #Same for all continuum images, since for each source you are going to be using all the line-free channels of all the spws:
-#resfreq= (restfreqsMin + restfreqsMax) / 2, where the minimum and maximum frequencies are taken from the restfreqs list (above)
+#restfreq= (restfreqsMin + restfreqsMax) / 2, where the minimum and maximum frequencies are taken from the restfreqs list (above)
 
 #Dictionaries to store the filenames for the 12M & 7M data corresponding to each source name:
 srcandms12= {}
