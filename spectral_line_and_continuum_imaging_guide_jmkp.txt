@@ -314,7 +314,7 @@ for i in srcs:
 #Create .fits files of the .pbcor images
 for i in srcs:
     #Assuming the FITS directory has been previously created
-    exportfits(imagename=  fim+i+'_feather_CO.image.pbcor', fitsimage= fim+'FITS/'+i+'_feather_CO.image.pbcor.fits',dropstokes= True, velocity= True)
+    exportfits(imagename= fim+i+'_feather_CO.image.pbcor', fitsimage= fim+'FITS/'+i+'_feather_CO.image.pbcor.fits',dropstokes= True, velocity= True)
 
 ########## End of Feathering ##########
 
@@ -414,6 +414,11 @@ for i in srcs:
      tclean(vis=vis,imagename=prename,gridder='mosaic',deconvolver='hogbom',pbmask=0.2,imsize=imsize,cell=cell,spw='',weighting='natural',robust=0.5,phasecenter=phasecenter,specmode='mfs',restfreq=restfreq,outframe='LSRK',veltype='radio',restoringbeam='common',mosweight=True,niter=niter,usemask='auto-multithresh',threshold=str(1.0*rms)+'Jy/beam',sidelobethreshold=sidelobethresh,noisethreshold=noisethresh,lownoisethreshold=lownoisethresh,minbeamfrac=minbeamfrac,growiterations=75,negativethreshold=negativethresh,interpolation='linear',cyclefactor=2,interactive=False,pbcor=True,verbose=True)
 
      index += 1
+
+#Create .fits files of the .pbcor images
+for i in srcs:
+    #Assuming the FITS directory has been previously created
+    exportfits(imagename= i+'_combine_continuum_chen1rms.image.pbcor', fitsimage= FITS/'+i+'_combine_continuum_chen1rms.image.pbcor.fits',dropstokes= True, velocity= True)
 
 ########## End of continuum imaging ##########
 
