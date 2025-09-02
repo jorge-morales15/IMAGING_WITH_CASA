@@ -53,7 +53,7 @@ for i in srcs:
       srcandms12[i]= glob.glob('12M_SPLIT/'+i+'_*.ms')
       srcandms7[i]= glob.glob('7M_SPLIT/'+i+'_*.ms')
 
-#Make dirty images of the 12M & 7M data, to find an appropriate START and NCHAN value for both the 12M + 7M data (using CARTA):
+#Make dirty images of the 12M & 7M data, to find an appropriate START and NCHAN value for both the 12M + 7M data:
 #This example is just for the 12CO line; for the other lines you need to change the values of SPW and RESTFREQ (below), or use the list that have these values (defined above) and incorporate them into the loop 
 
 spw= spws[7] #For 12CO
