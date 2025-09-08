@@ -164,13 +164,13 @@ for i in srcs:
 #Now, there are two options to find the appropriate THRESHOLD value that's going to be used to make the clean combined image:
 
 #Option 1: In CARTA, you can place a 20arcsec x 20arcsec square at the center of your dirty 12M + 7M image and measure the rms in 2 line-free channels (e.g., ch=100 & ch=800), so you can use the average as your rms threshold for tclean
-#If you are not going to clean the whole cube, you can also use CARTA at this moment to select the START and NCHAN values for tclean
 
-#Example for 12CO, and the corresponding START and NCHAN values determined with CARTA (using Option 1):
+#AS A SIDENOTE: If you are not going to clean the whole cube, you can also use CARTA at this moment to select the START and NCHAN values for tclean
 #If you are going to clean the whole cube, you can use the same START and NCHAN values used for the 12M + 7M dirty image (above)
 #So you have to choose: save time by not having to look at each dirty image to find where to 'cut' the cube and then spend more time cleaning, or
-#reduce the cleaning time by just cleaning the 'interesting' part of the cube, which you can find by looking at the dirty image in CARTA... I choose the latter
- 
+#reduce the cleaning time by just cleaning the 'interesting' part of the cube, which you can find by looking at the dirty image in CARTA... I chose the latter to obtain vmin and chan
+
+#Example for 12CO, and the corresponding START and NCHAN values determined with CARTA:
 vmin= [-12,-12,-15,-25,-12,-30,-12,-4,-12,-12,-42,-55,-5,-12,-12] #km/s
 chan= [200,200,370,350,250,450,260,320,280,200,420,500,500,240,200] #chans
 
