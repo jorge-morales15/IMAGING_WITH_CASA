@@ -144,8 +144,8 @@ imsize= 450 #Do not change this value
 cell= '0.16arcsec' #Do not change this value
 width= '' #Do not change this value
 
-#This example is for 12CO:
-start= '-67km/s' #For 12CO
+#This example is for 12CO and using OPTION #1 (above):
+start= '-67km/s' #For 12CO (if you used OPTION #2,this value would be in MHz)
 nchan= 950 #For 12CO
 
 index= 0 #Again...
