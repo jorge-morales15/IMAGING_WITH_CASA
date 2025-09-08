@@ -204,13 +204,14 @@ width= ''
 
 index = 0
 
+rms = rms_weblog[7] #For 12CO (This value changes per line, not per source, therefore it's outside the FOR loop)
+
 for i in srcs:
     vis = srcandms12[i] + srcandms7[i] #srcandms12 & srcandms7 where previously defined (above)
     prename= 'CLEAN_IMAGES/'+i+'_CO_combine_cube_2rms'  #Example for 12CO; you need to update de name for other molecular lines
     phasecenter = coords[index] #previously defined
     nchan = chan[index]
     start = str(vmin[index])+'km/s'
-    rms = rms_weblog[7] #For 12CO  #This value does not change per source, so it can be taken out of the FOR loop
 
     #We are going to clean down to 2 * rms
     tclean(vis=vis,imagename=prename,gridder='mosaic',deconvolver='hogbom',pbmask=0.2,imsize=imsize,cell=cell,spw=spw,weighting='briggsbwtaper',robust=0.5,phasecenter=phasecenter,specmode='cube',width=width,start=start,nchan=nchan,restfreq=restfreq,outframe='LSRK',veltype='radio',restoringbeam='common',mosweight=True,niter=niter,usemask='auto-multithresh',threshold=str(2.0*rms)+'Jy/beam',sidelobethreshold=sidelobethresh,noisethreshold=noisethresh,lownoisethreshold=lownoisethresh,minbeamfrac=minbeamfrac,growiterations=75,negativethreshold=negativethresh,interpolation='linear',cyclefactor = 2,interactive=False,pbcor=True,verbose=True)
