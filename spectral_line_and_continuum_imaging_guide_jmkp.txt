@@ -187,7 +187,7 @@ chan= [200,200,370,350,250,450,260,320,280,200,420,500,500,240,200] #chans
 #Each value in the list corresponds to each of the corresponding spectral lines:
 #'shift-H2CO-9-9', 'shift-H2CO-3-2', 'CH3OH-5-4', 'H2CO', 'C18O', '13CO', 'CH3OH-3-4', 'CO', 'N2Dp', 'Cont'
 
-rms_weblog= [6.7e-3, 5.6e-3, 6.1e-3, 5.4e-3, 8.1e-3, 9.9e-3, 7.7e-3, 7.0e-3, 8.5e-3, 2.3e-3] #Jy/beam
+rms_weblog= [6.7e-3, 5.6e-3, 6.1e-3, 5.4e-3, 8.1e-3, 9.9e-3, 7.7e-3, 7.0e-3, 8.5e-3, 2.3e-3] #Jy/beam, from 12M data
 
 #Important tlcean parameters (DO NOT CHANGE):
 noisethresh= 1.0     #mask threshold based on the noise level
