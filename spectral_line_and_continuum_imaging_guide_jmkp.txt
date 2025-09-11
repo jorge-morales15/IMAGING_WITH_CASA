@@ -140,7 +140,7 @@ elif chan_width[0]<0:                                              #If CDELT4 is
     chans=(Tmaxf-Tminf)//chan_width[iff]
     print(f'Suggested START value in MHz: {Tminf/(1e6)}')
     print(f'Suggested NCHAN: {chans+1}')
-    print('Warning: Suggested START value corresponds to lowest velocity in the cube (WIDTH parameter has positive value.')
+    print('Warning: Suggested START value corresponds to lowest velocity in the cube (WIDTH parameter has positive value).')
 
 #Make the combined 12M + 7M dirty images using the START and NCHAN values obtained from one of the options in the previous step:
 
