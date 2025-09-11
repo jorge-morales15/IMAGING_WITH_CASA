@@ -127,7 +127,7 @@ if chan_width[0]>0:                                                #If CDELT4 (w
     chans=(Tmaxf-Tminf)//chan_width[if0]                           #Calculate the number of channels between the starting and ending frequency
     print(f'Suggested START value in MHz: {Tminf/(1e6)}')          #Output a message with the suggested START in MHz
     print(f'Suggested NCHAN: {chans+1}')                           #Outputs a message with the suggested NCHAN, taking into account that the channel indexing starts in 0...
-    print('Warning: The suggested START value corresponds to highest velocity in the cube.')
+    print('Warning: Suggested START value corresponds to highest velocity in the cube (WIDTH parameter has negative value).')
 
 elif chan_width[0]<0:                                              #If CDELT4 is negative, the starting frequency from the file will be the highest frequency
     fmin=max(ff)                                                   #Look for the highest frequency from all the files to determine the START
@@ -140,7 +140,7 @@ elif chan_width[0]<0:                                              #If CDELT4 is
     chans=(Tmaxf-Tminf)//chan_width[iff]
     print(f'Suggested START value in MHz: {Tminf/(1e6)}')
     print(f'Suggested NCHAN: {chans+1}')
-    print('Warning: The suggested START value corresponds to lowest velocity in the cube.')
+    print('Warning: Suggested START value corresponds to lowest velocity in the cube (WIDTH parameter has positive value.')
 
 #Make the combined 12M + 7M dirty images using the START and NCHAN values obtained from one of the options in the previous step:
 
@@ -149,7 +149,7 @@ cell= '0.16arcsec' #Do not change this value
 width= '' #Do not change this value
 
 #This example is for 12CO and using OPTION #1 (above):
-start= '-67km/s' #For 12CO (if you used OPTION #2,this value would be in MHz)
+start= '-67km/s' #For 12CO (if you used OPTION #1, take into account the Warning message above; if you used OPTION #2,this value would be in MHz)
 nchan= 950 #For 12CO
 
 index= 0 #Again...
