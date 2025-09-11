@@ -116,7 +116,7 @@ for i in range(0,len(images)):
 chan_cut=10                                                                     #Define the amount of channels we want to cut from both ends (this can be changed)
 
 #Check if 'CDELT4' (the channel width) is positive or negative, since the sign determines if you will move along the channels in the spw from left to right or viceversa
-if chan_width[0]>0:                                                #If CDELT4 (width of channel) is positive, the starting frequency from the file will be the highest frequency
+if chan_width[0]>0:                                                #If CDELT4 (width of channel) is positive, the starting frequency from the file will be the lowest frequency
     fmin=max(f0)                                                   #Look for the lowest frequency from all the files to determine where to find our START frequency
     fmax=min(ff)                                                   #Look for the highest frequency from all the files to determine NCHAN and not overshoot or include noisy channles
     if0=f0.index(fmin)                                             #Determine the index of the source we are using for reference as starting frequency
@@ -128,7 +128,7 @@ if chan_width[0]>0:                                                #If CDELT4 (w
     print(f'Suggested START Value in MHz: {Tminf/(1e6)}')          #Output a message with the suggested START in MHz
     print(f'Suggested NCHAN: {chans+1}')                           #Outputs a message with the suggested NCHAN, taking into account that the channel indexing starts in 0...
 
-elif chan_width[0]<0:                                              #If CDELT4 is negative, the starting frequency from the file will be the lowest frequency
+elif chan_width[0]<0:                                              #If CDELT4 is negative, the starting frequency from the file will be the highest frequency
     fmin=max(ff)                                                   #Look for the highest frequency from all the files to determine the START
     fmax=min(f0)                                                   #Look for the lowest frequency from all the files to (which will be the ending frequency) to determine NCHAN
     iff=ff.index(fmin)                                             #Determine the index of the source we are using for reference as starting frequency
@@ -139,6 +139,7 @@ elif chan_width[0]<0:                                              #If CDELT4 is
     chans=(Tmaxf-Tminf)//chan_width[iff]
     print(f'Suggested START Value in MHz: {Tminf/(1e6)}')
     print(f'Suggested NCHAN: {chans+1}')
+    
 
 #Make the combined 12M + 7M dirty images using the START and NCHAN values obtained from one of the options in the previous step:
 
