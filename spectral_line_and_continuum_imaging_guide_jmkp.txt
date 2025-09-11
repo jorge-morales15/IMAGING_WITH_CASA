@@ -125,7 +125,7 @@ if chan_width[0]>0:                                                #If CDELT4 (w
     Tminf=fmin+chan_width[if0]*chan_cut                            #Calculate where we are truncating the channels for the starting frequency
     Tmaxf=fmax-chan_width[iff]*chan_cut                            #Calculate where we are truncating the channels for the ending frequency
     chans=(Tmaxf-Tminf)//chan_width[if0]                           #Calculate the number of channels between the starting and ending frequency
-    print(f'Suggested START Value in MHz: {Tminf/(1e6)}')          #Output a message with the suggested START in MHz
+    print(f'Suggested START value in MHz: {Tminf/(1e6)}')          #Output a message with the suggested START in MHz
     print(f'Suggested NCHAN: {chans+1}')                           #Outputs a message with the suggested NCHAN, taking into account that the channel indexing starts in 0...
     print('Warning: The suggested START value corresponds to highest velocity in the cube.')
 
@@ -138,7 +138,7 @@ elif chan_width[0]<0:                                              #If CDELT4 is
     Tminf=fmax+chan_width[if0]*chan_cut                            #The fmin and fmax are switched in the equation when the channel width is negative
     Tmaxf=fmin-chan_width[iff]*chan_cut
     chans=(Tmaxf-Tminf)//chan_width[iff]
-    print(f'Suggested START Value in MHz: {Tminf/(1e6)}')
+    print(f'Suggested START value in MHz: {Tminf/(1e6)}')
     print(f'Suggested NCHAN: {chans+1}')
     print('Warning: The suggested START value corresponds to lowest velocity in the cube.')
 
