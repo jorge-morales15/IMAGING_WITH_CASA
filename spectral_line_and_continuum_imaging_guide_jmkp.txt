@@ -409,7 +409,7 @@ niter = 100000000
 index= 0
 
 for i in srcs:
-     prename= 'CLEAN_IMAGES/CONTINUUM/'+i+'_combine_continuum_chen1rms' #You need to update the path to where you want to store the images 
+     prename= 'CLEAN_IMAGES/CONTINUUM/'+i+'_combine_continuum_1rms' #You need to update the path to where you want to store the images 
      vis= srcandms12[i] + srcandms7[i]
      phasecenter= coords[index]
      rms = thresh[index]
@@ -423,7 +423,7 @@ for i in srcs:
 #Create .fits files of the .pbcor images
 for i in srcs:
     #Assuming the FITS directory has been previously created
-    exportfits(imagename= i+'_combine_continuum_chen1rms.image.pbcor', fitsimage= 'FITS/'+i+'_combine_continuum_chen1rms.image.pbcor.fits',dropstokes= True, velocity= True)
+    exportfits(imagename= i+'_combine_continuum_1rms.image.pbcor', fitsimage= 'FITS/'+i+'_combine_continuum_1rms.image.pbcor.fits',dropstokes= True, velocity= True)
 
 ########## End of continuum imaging ##########
 
